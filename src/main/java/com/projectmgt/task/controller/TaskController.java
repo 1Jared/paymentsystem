@@ -5,7 +5,9 @@ import com.projectmgt.task.entity.Project;
         import com.projectmgt.task.entity.Task;
         import com.projectmgt.task.repository.ProjectRepository;
         import com.projectmgt.task.service.TaskService;
-        import org.springframework.beans.factory.annotation.Autowired;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import org.springframework.beans.factory.annotation.Autowired;
         import org.springframework.data.domain.Page;
         import org.springframework.data.domain.Pageable;
         import org.springframework.format.annotation.DateTimeFormat;
@@ -18,6 +20,7 @@ import com.projectmgt.task.entity.Project;
 
 @RestController
 @RequestMapping("/tasks")
+@Api(value = "Task controller")
 public class TaskController {
 
     @Autowired
@@ -26,6 +29,7 @@ public class TaskController {
     private ProjectRepository projectRepository;
 
     @PostMapping("/{projectId}/tasks")
+    @ApiOperation(value = "Post new task")
     public ResponseEntity<Task> createTask(@PathVariable Long projectId, @RequestBody Task task) {
         Project project = projectRepository.findById(projectId)
                 .orElseThrow(() -> new RuntimeException("Project not found"));
@@ -36,6 +40,7 @@ public class TaskController {
     }
 
     @GetMapping("/{projectId}/tasks")
+    @ApiOperation(value = "Get task by project id")
     public ResponseEntity<Page<Task>> getTasksByProjectId(@PathVariable Long projectId, Pageable pageable) {
         Page<Task>  tasks = taskService.getTasksByProjectId(projectId,pageable);
         return ResponseEntity.ok(tasks);
