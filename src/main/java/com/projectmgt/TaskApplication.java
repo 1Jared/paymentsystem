@@ -1,4 +1,4 @@
-package com.projectmgt.task;
+package com.projectmgt;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
