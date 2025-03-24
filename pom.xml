@@ -31,20 +31,10 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
-		<!--Security-->
+		<!-- Security -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.security.oauth.boot</groupId>
-			<artifactId>spring-security-oauth2-autoconfigure</artifactId>
-			<version>2.4.0</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.security.oauth.boot</groupId>
-			<artifactId>spring-security-oauth2-autoconfigure</artifactId>
-			<version>2.4.0</version>
 		</dependency>
 
 		<!-- Development Tools -->
@@ -107,11 +97,12 @@
 			<scope>test</scope>
 		</dependency>
 
-		<!-- Servlet API -->
+		<!-- Jakarta Servlet API -->
+		<!-- https://mvnrepository.com/artifact/jakarta.servlet/jakarta.servlet-api -->
 		<dependency>
 			<groupId>jakarta.servlet</groupId>
 			<artifactId>jakarta.servlet-api</artifactId>
-			<version>5.0.0</version>
+			<version>4.0.2</version>
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>
